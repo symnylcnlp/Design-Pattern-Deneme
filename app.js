@@ -10,13 +10,6 @@ app.set('view engine', 'ejs')
 app.set('views', './views')
 app.use('/users', usersRoutes)
 
-const startServer = async () => {
-    try {
-        await sequelize.sync()
-        app.listen(5000, () => console.log('Server is running on port 3000'))
-    } catch (error) {
-        console.error('Unable to connect to the database:', error)
-    }
-}
+const port = 5000
 
-startServer()
+app.listen(port, console.log('server ayakta'))
